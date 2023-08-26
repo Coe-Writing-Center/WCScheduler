@@ -87,7 +87,7 @@ def CreateWorkerList():#modified DONE
         WorkerInfo.readline()
         for line in WorkerInfo:
             #print(line)
-            timeStamp, email, firstName, lastName, year, field_Of_Study, hoursTens, hoursSingles, sunday, monday, tuesday, wednesday, thursday, friday, saturday =line.split(",")
+            timeStamp, email, firstName, lastName, year, field_Of_Study, hoursTens, hoursSingles, sunday, monday, tuesday, wednesday, thursday, friday =line.split(",")
 
             name = firstName.strip() + " " + lastName.strip()
             #print(name)
@@ -98,8 +98,8 @@ def CreateWorkerList():#modified DONE
 
             hoursWanted=(int(hoursTens.strip())*10)+int(hoursSingles.strip())
 
-            week = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
-            weekNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+            week = [sunday, monday, tuesday, wednesday, thursday, friday]
+            weekNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday"]
 
             TempTimesAvailableList = []
             for i in range(len(week)):
@@ -128,7 +128,7 @@ def CreateHourList():#modified DONE
       HourOptions.readline()
       for line in HourOptions:
         print(line)
-        time_stamp,email, multiple_shifts, mix_majors, mix_age, min_ten, min_single, max_ten, max_single, o_sunday, o_monday, o_tuesday, o_wednesday, o_thursday, o_friday, o_saturday, b_sunday, b_monday, b_tuesday, b_wednesday, b_thursday, b_friday, b_saturday, l_sunday, l_monday, l_tuesday, l_wednesday, l_thursday, l_friday, l_saturday = line.split(",")
+        time_stamp,email, multiple_shifts, mix_majors, mix_age, min_ten, min_single, max_ten, max_single, o_sunday, o_monday, o_tuesday, o_wednesday, o_thursday, o_friday, b_sunday, b_monday, b_tuesday, b_wednesday, b_thursday, b_friday, l_sunday, l_monday, l_tuesday, l_wednesday, l_thursday, l_friday = line.split(",")
 
         MULTIPLE_SHIFTS = (multiple_shifts.strip() != "No")
         MIX_MAJORS = (mix_majors.strip() == "Yes")
@@ -139,10 +139,10 @@ def CreateHourList():#modified DONE
 
         Choices_List = [MULTIPLE_SHIFTS,MIX_MAJORS,MIX_AGES,SHIFT_MINIMUM_WORKERS,SHIFT_MAXIMUM_WORKERS]
 
-        weekNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
-        o_week = [o_sunday, o_monday, o_tuesday, o_wednesday, o_thursday, o_friday, o_saturday]
-        b_week = [b_sunday, b_monday, b_tuesday, b_wednesday, b_thursday, b_friday, b_saturday]
-        l_week = [l_sunday, l_monday, l_tuesday, l_wednesday, l_thursday, l_friday, l_saturday]
+        weekNames = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday"]
+        o_week = [o_sunday, o_monday, o_tuesday, o_wednesday, o_thursday, o_friday]
+        b_week = [b_sunday, b_monday, b_tuesday, b_wednesday, b_thursday, b_friday]
+        l_week = [l_sunday, l_monday, l_tuesday, l_wednesday, l_thursday, l_friday]
 
         for i in range(len(o_week)):
             o_week[i] = o_week[i].strip().split("_")
